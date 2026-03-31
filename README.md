@@ -1,4 +1,4 @@
 # RUST game start script
-Basically its just script which automatically indexing rust EAC launcher (Rust.exe, not RustClient.exe). And start it with some opti args.
+Its basically just a script that automatically indexes the Rust EAC launcher (Rust.exe, not RustClient.exe). It also starts it with some opti args.
 # Arguments used here
-Disable player eyes actions, playerculling (Rendering object when not visible), headlerp 5 (not insta, but still fast), disabling legs, gibs, and decal
+  Disable player eyes actions, playerculling (Rendering players always, even when theyre not visible), headlerp 5 (not insta, but still fast), disabling legs, gibs, and decal. Forcing Occlusion Culling.
