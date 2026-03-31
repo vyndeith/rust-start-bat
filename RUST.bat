@@ -35,7 +35,8 @@ if defined RUST (
         -player.eye_blinking 0 ^
         -player.eye_movement 0 ^
         -legs.enablelegs 0 ^
-        -playercull.enabled 0
+        -playercull.enabled 0 ^
+        -culling.toggle 1
 ) else (
     echo Rust.exe not found
     pause
