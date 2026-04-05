@@ -10,11 +10,11 @@ set "STEAM=%STEAM:/=\%"
 
 set "RUST="
 
-for /f "tokens=*" %%L in ('type "%STEAM%\steamapps\libraryfolders.vdf" ^| findstr "path"') do (
-    set "line=%%L"
-    set "line=!line:"=!"
-    for %%P in (!line!) do (
-        if exist "%%P\steamapps\common\Rust\Rust.exe" set "RUST=%%P\steamapps\common\Rust\Rust.exe"
+for /f tokens^=2^,4^ delims^=^" %%a in ('type "%STEAM%\steamapps\libraryfolders.vdf" ^| findstr /i "path"') do (
+    if /i "%%a"=="path" (
+        set "libpath=%%b"
+        set "libpath=!libpath:/=\!"
+        if exist "!libpath!\steamapps\common\Rust\Rust.exe" set "RUST=!libpath!\steamapps\common\Rust\Rust.exe"
     )
 )
 ::================================
