@@ -8,6 +8,10 @@ setlocal enabledelayedexpansion
 for /f "skip=2 tokens=2,*" %%a in ('reg query "HKCU\Software\Valve\Steam" /v SteamPath 2^>nul') do set "STEAM=%%b"
 set "STEAM=%STEAM:/=\%"
 
+:: thread calculation
+for /f %%C in ('powershell -command "(Get-WmiObject Win32_ComputerSystem).NumberOfLogicalProcessors"') do set "LOGICAL=%%C"
+set /a MAXTHREADS=%LOGICAL% - 2
+
 set "RUST="
 
 for /f tokens^=2^,4^ delims^=^" %%a in ('type "%STEAM%\steamapps\libraryfolders.vdf" ^| findstr /i "path"') do (
@@ -31,7 +35,7 @@ if defined RUST (
         -ai.maxgroundaligndist 1 ^
         -instruments.processsustainpedal 0 ^
 
-        -global.maxthreads 14 ^
+        -global.maxthreads %MAXTHREADS% ^
         -grass.maxthreads 2 ^
         -graphics.branding 0 ^
         -headlerp 5 ^
