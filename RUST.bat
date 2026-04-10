@@ -41,9 +41,12 @@ if defined RUST (
         -headlerp 5 ^
 
         -decal.capacity 0 ^
-        -decal.limit 0 ^
-        -decal.instancing 0 ^
+        -decal.limit 8 ^
+        -decal.cache 0 ^
+        -decal.instancing 1 ^
         -effects.maxgibs 0 ^
+        -effects.maxgibdist 0 ^
+        -effects.maxgiblife 0 ^
         -player.cold_breath 0 ^
         -player.eye_blinking 0 ^
         -player.eye_movement 0 ^
