@@ -59,7 +59,14 @@ if defined RUST (
         -gametip.showgametips 0 ^
 
         -client.prioritize_premium_servers 0 ^
-        -client.cached_browser_parallel 1 
+        -client.cached_browser_parallel 1 ^
+
+        -effects.otherplayerslightflares 0 ^
+
+        -render.building_blocked_preview_distance 50 ^
+	    -nobuildzonematerialcontroller.setstrengthday 0 ^
+	    -nobuildzonematerialcontroller.setstrengthnight 0 ^
+	    -nobuildzonematerialcontroller.setheight 10
 ) else (
     echo Rust.exe not found
     pause
