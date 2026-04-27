@@ -55,11 +55,15 @@ if defined RUST (
 
         -playercull.enabled 0 ^
         -culling.toggle 1 ^
+        -culling.entitymaxdist 350 ^
+        -culling.entityupdaterate 3 ^
+        -culling.entityminshadowculldist 2 ^
+        -culling.envmindist 5 
         -console.erroroverlay 0 ^
         -gametip.showgametips 0 ^
 
         -client.prioritize_premium_servers 0 ^
-        -client.cached_browser_parallel 1 ^
+        -client.cached_browser_parallel 0 ^
 
         -effects.otherplayerslightflares 0 ^
 
@@ -69,7 +73,11 @@ if defined RUST (
 	    -nobuildzonematerialcontroller.setheight 10 ^
 
         -audio.framebudget 0.2 ^
-        -audio.minupdatefraction 0.05
+        -audio.minupdatefraction 0.05 ^
+        -graphics.maxqueuedframes 0 ^
+        -grass.refresh_budget 0.1 ^
+        -npcwalkanimation.framebudgetms 0 ^
+        -signage.texturerequestdistance 20 
 ) else (
     echo Rust.exe not found
     pause
