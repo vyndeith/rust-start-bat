@@ -29,7 +29,7 @@ if defined RUST (
         -steam ^
         -high ^
 
-        -gc.incremental_enabled 5 ^
+        -gc.incremental_milliseconds 1 ^
         -lerp.timeoffsetinterval 4 ^
         -texture.memory_vram_factor 2 ^
         -ai.maxgroundaligndist 1 ^
