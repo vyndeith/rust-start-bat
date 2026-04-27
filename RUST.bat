@@ -66,7 +66,10 @@ if defined RUST (
         -render.building_blocked_preview_distance 50 ^
 	    -nobuildzonematerialcontroller.setstrengthday 0 ^
 	    -nobuildzonematerialcontroller.setstrengthnight 0 ^
-	    -nobuildzonematerialcontroller.setheight 10
+	    -nobuildzonematerialcontroller.setheight 10 ^
+
+        -audio.framebudget 0.2 ^
+        -audio.minupdatefraction 0.05
 ) else (
     echo Rust.exe not found
     pause
