@@ -10,7 +10,11 @@ set "STEAM=%STEAM:/=\%"
 
 :: thread calculation
 for /f %%C in ('powershell -command "(Get-WmiObject Win32_ComputerSystem).NumberOfLogicalProcessors"') do set "LOGICAL=%%C"
+for /f %%C in ('powershell -command "(Get-WmiObject Win32_Processor | Select -First 1).NumberOfCores"') do set "PHYSICAL=%%C"
 set /a MAXTHREADS=%LOGICAL% - 2
+set /a JOB_WORKERS=%PHYSICAL% - 2
+set /a GC_HELPERS=%PHYSICAL% - 1
+set /a PSO_JOBS=%PHYSICAL% / 2
 
 set "RUST="
 
@@ -30,13 +34,15 @@ if defined RUST (
         -high ^
 
         -gc.incremental_milliseconds 1 ^
-        -lerp.timeoffsetinterval 4 ^
         -texture.memory_vram_factor 2 ^
         -ai.maxgroundaligndist 1 ^
         -instruments.processsustainpedal 0 ^
 
         -global.maxthreads %MAXTHREADS% ^
-        -grass.maxthreads 2 ^
+        -job-worker-count %JOB_WORKERS% ^
+        -gc-helper-count %GC_HELPERS% ^
+        -max-async-pso-job-count %PSO_JOBS% ^
+        -grass.maxthreads 0 ^
         -graphics.branding 0 ^
         -headlerp 5 ^
 
@@ -61,11 +67,6 @@ if defined RUST (
         -culling.envmindist 5 
         -console.erroroverlay 0 ^
         -gametip.showgametips 0 ^
-
-        -client.prioritize_premium_servers 0 ^
-        -client.cached_browser_parallel 0 ^
-
-        -effects.otherplayerslightflares 0 ^
 
         -render.building_blocked_preview_distance 50 ^
 	    -nobuildzonematerialcontroller.setstrengthday 0 ^
