@@ -38,7 +38,7 @@ if defined RUST (
         -global.maxthreads %MAXTHREADS% ^
         -grass.maxthreads 2 ^
         -graphics.branding 0 ^
-        -headlerp 5 ^
+        -client.headlerp_inertia 0 ^
 
         -decal.capacity 0 ^
         -decal.limit 8 ^
