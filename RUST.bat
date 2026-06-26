@@ -27,7 +27,6 @@ for /f tokens^=2^,4^ delims^=^" %%a in ('type "%STEAM%\steamapps\libraryfolders.
 if defined RUST (
     start "" "%RUST%" ^
         -steam ^
-        -high ^
 
         -gc.incremental_milliseconds 1 ^
         -lerp.timeoffsetinterval 4 ^
