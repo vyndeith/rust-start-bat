@@ -59,7 +59,7 @@ if defined RUST (
         -culling.entitymaxdist 350 ^
         -culling.entityupdaterate 3 ^
         -culling.entityminshadowculldist 2 ^
-        -culling.envmindist 5 
+        -culling.envmindist 5 ^
 
         -render.building_blocked_preview_distance 50 ^
 	    -nobuildzonematerialcontroller.setstrengthday 0 ^
