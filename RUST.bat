@@ -30,11 +30,7 @@ if defined RUST (
   -global.maxthreads %MAXTHREADS% ^
   -grass.maxthreads 1 ^
   -grass.refresh_budget 0.1 ^
-  -shadowcaching.enabled true ^
-  -shadowcaching.enableframeratelimiting true ^
-  -shadowcaching.enabledistancebasedframerates true ^
-  -shadowcaching.updatemaxframerate 30 ^
-  -shadowcaching.updateminframerate 10 ^
+  -shadowcaching.enabled 0 ^
   -decal.capacity 0 ^
   -decal.limit 8 ^
   -decal.cache 0 ^
