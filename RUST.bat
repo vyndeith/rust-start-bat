@@ -57,7 +57,6 @@ if defined RUST (
   -nobuildzonematerialcontroller.setheight 10 ^
   -graphics.branding 0 ^
   -console.erroroverlay 0 ^
-  -gametip.showgametips 0 ^
   -client.cached_browser_parallel 0 ^
   -signage.texturerequestdistance 20 ^
   -instruments.processsustainpedal 0
